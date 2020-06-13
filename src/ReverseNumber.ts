@@ -11,14 +11,16 @@ function reverse(x: number): number {
   
   let division = 1
   let value = input
-  while (value >= 1) {
-      value = (input / division) % 10
+  while (input >= 1) {
+      value = (input ) % 10
       const digit = Math.trunc(value)
       result = result*10 + digit
+      input = input / 10
+
       division *= 10
   }    
   
-  return (result * negative) / 10
+  return (result * negative)
 }
 
 const testCases = [
