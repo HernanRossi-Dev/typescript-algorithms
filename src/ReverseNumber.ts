@@ -7,19 +7,17 @@ function reverse(x: number): number {
       negative = x / ((-1)*x)
   }
 
-  if (!input) return result
+  if (!input ) return result
   
-  let division = 1
   let value = input
   while (input >= 1) {
       value = (input ) % 10
       const digit = Math.trunc(value)
       result = result*10 + digit
       input = input / 10
-
-      division *= 10
   }    
   
+  if (result > Math.pow(2, 31) - 1) return 0
   return (result * negative)
 }
 
