@@ -1,4 +1,5 @@
 "use strict";
+//More time efficient recursive algorithm
 function numIslands(grid) {
     if (!grid.length || !grid[0].length)
         return 0;
@@ -14,8 +15,6 @@ function numIslands(grid) {
     return result;
 }
 function exploreLand(grid, x, y) {
-    const rows = grid.length;
-    const columns = grid[0].length;
     if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] !== '1')
         return;
     grid[x][y] = '0';
