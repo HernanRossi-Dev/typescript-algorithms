@@ -1,6 +1,6 @@
 function intToRoman(num: number): string {
   if(!num) return ''
-  let result = []
+  let result: string[] = []
   const ones = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
   const tens = ['X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC']
   const hunds = ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM']
@@ -9,22 +9,22 @@ function intToRoman(num: number): string {
 
   let one = num % 10
   if(one) {
-    result.unshift(ones[one -1])
+    result = [ones[one -1]].concat(result)
   }
   num = Math.floor(num / 10)
   let ten = num % 10
   if(ten) {
-    result.unshift(tens[ten -1])
+    result = [tens[ten -1]].concat(result)
   }
   num = Math.floor(num / 10)
   let hund = num % 10
   if(hund) {
-    result.unshift(hunds[hund-1])
+    result = [hunds[hund-1]].concat(result)
   }
   num = Math.floor(num / 10)
   let thou = num % 10
   if(thou) {
-    result.unshift(thous[thou-1])
+    result = [thous[thou-1]].concat(result)
   }
   return result.join('')
 };
